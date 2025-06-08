@@ -1,23 +1,29 @@
 package main
 
 import (
-    "log"
-    "runtime"
-    "os"
-    "fmt"
-    "net/http"
-    "goCaaS/internal/encryption"
+	"fmt"
+	"goCaaS/internal/encryption"
+	"log"
+	"net/http"
+	"os"
+	"runtime"
+	"time"
 )
 
 func main() {
-    mux := http.NewServeMux()
-    mux.HandleFunc("/encrypt", encryption.HandleEncryptRequest)
+	go func() {
+		for {
+			logResourceUsage()
+			time.Sleep(10 * time.Second)
+		}
+	}()
+	mux := http.NewServeMux()
+	mux.HandleFunc("/encrypt", encryption.HandleEncryptRequest)
 
-    addr := ":8080"
-    log.Printf("Server listening on %s", addr)
-    log.Fatal(http.ListenAndServe(addr, mux))
+	addr := ":8080"
+	log.Printf("Server listening on %s", addr)
+	log.Fatal(http.ListenAndServe(addr, mux))
 }
-
 
 func logResourceUsage() {
 	var m runtime.MemStats
