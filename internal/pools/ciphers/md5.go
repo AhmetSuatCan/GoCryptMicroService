@@ -4,7 +4,6 @@ import (
     "encoding/hex"
 )
 
-//These functions uses md5 algorithm to encrypt the data.
 
 func EncryptMD5V1(data, salt string) string {
     sum := md5.Sum([]byte(data + salt))

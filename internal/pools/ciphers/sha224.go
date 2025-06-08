@@ -5,8 +5,6 @@ import (
 	"encoding/hex"
 )
 
-//These functions uses sha224 algorithm to encrypt the data.
-
 func EncryptSHA224V1(data, salt string) string {
 	h := sha256.New224()
 	h.Write([]byte(data + salt))

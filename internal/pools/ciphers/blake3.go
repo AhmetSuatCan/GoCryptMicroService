@@ -5,8 +5,6 @@ import (
     "github.com/zeebo/blake3"
 )
 
-//These functions uses blake3 algorithm to encrypt the data.
-
 func EncryptBlake3V1(data, salt string) string {
     h := blake3.Sum256([]byte(data + salt))
     return hex.EncodeToString(h[:])

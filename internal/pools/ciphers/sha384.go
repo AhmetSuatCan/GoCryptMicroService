@@ -5,7 +5,6 @@ import (
 	"encoding/hex"
 )
 
-
 func EncryptSHA384V1(data, salt string) string {
 	h := sha512.New384()
 	h.Write([]byte(data + salt))

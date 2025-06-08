@@ -4,7 +4,6 @@ import (
     "golang.org/x/crypto/blake2s"
 )
 
-//These functions uses blake2b algorithm to encrypt the data.
 
 func EncryptBlake2sV1(data, salt string) string {
     h := blake2s.Sum256([]byte(data + salt))
