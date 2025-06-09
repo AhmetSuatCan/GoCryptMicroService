@@ -72,7 +72,6 @@ var AllCiphers = []func(string, string) string{
 	EncryptSHA512V5,
 }
 
-
 var AllCiphersMetadata = []string{
 	// Blake2b
 	"Blake2b with normal data & salt",
