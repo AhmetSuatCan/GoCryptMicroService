@@ -2,6 +2,8 @@
 
 **goCaaS** is a lightweight, high-performance Go-based encryption API designed to demonstrate secure, salted hashing using a wide range of modern and legacy hash functions.
 
+This project is a Go-based reimplementation of my friend’s  project: [djangoCryptoMicroservice](https://github.com/erdemserhat/djangoCryptoMicroservice)
+
 ---
 
 ## 🚀 Features
@@ -36,13 +38,13 @@ goCaaS/
 
 POST /encrypt HTTP/1.1
 Content-Type: application/json
-
+```
 {
   "apiKey": "sample-api-key",
   "userUUID": "123e4567-e89b-12d3-a456-426614174000",
   "sensitiveData": "mySecret123"
 }
-
+```
 
 
 •	TODO: Some refactoring is needed in the ciphers package.
